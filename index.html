@@ -1,0 +1,52 @@
+teste.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ATIVIDADE 1</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        @import url("estilo1.css");
+    </style>
+    <script>
+        function showResult() {
+            var resultDiv = document.getElementById("result");
+            var corinthiansRadio = document.getElementById("corinthians");
+            var palmeirasRadio = document.getElementById("palmeiras");
+            var fnameValue = document.getElementById("fname").value;
+
+            if (corinthiansRadio.checked) {
+                resultDiv.innerText = "É isso ai " + fnameValue + "," + " aqui é corinthians Porrraaaa!";
+            } else if (palmeirasRadio.checked) {
+                resultDiv.innerText = "Que mané Palmeiras " + fnameValue + "," + " aqui é corinthians Porrraaaa!";
+            } else {
+                resultDiv.innerText = "Por favor, " + fnameValue + " escolha a unica resposta certa.";
+            } 
+        }
+    </script>
+</head>
+<body>
+    <h1>Melhores momentos entre Corinthians e Palmeiras</h1>
+    <a href="https://www.youtube.com/watch?v=DbSBVcVX-YY" target="_blank">
+        <img src="corinthians.png" style="width:350px">     
+        <img src="palmeiras.png" style="width:190px">
+    </a>
+    <p>
+        Qual o melhor time do Brasil? 
+        
+        <form action="" onsubmit="showResult(); return false;">
+            <label for="fname">Seu nome:</label><br>
+            <input type="text" id="fname" name="fname" value=""><br><br>
+            <label for="fUC">Quem vai ganhar?</label><br><br>
+            <input type="radio" id="corinthians" name="fav_language" value="Corinthians"> 
+            <label for="corinthians">Corinthians</label><br>
+            <input type="radio" id="palmeiras" name="fav_language" value="Palmeiras">
+            <label for="palmeiras">Palmeiras</label><br><br>
+            <input type="submit" value="Salvar">
+        </form>
+    </p>
+    <div id="result"></div>
+</body>
+</html>
